@@ -1,0 +1,380 @@
+setuptools-scm (7.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 04 Jul 2022 10:14:55 +0200
+
+setuptools-scm (7.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop now-unneeded fix_python_use.patch.
+  * Rewrite accept_debian_tags.patch.
+  * Bump standards-version to 4.6.1.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 25 Jun 2022 08:30:15 +0200
+
+setuptools-scm (6.4.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add patch to fix a test trying to call 'python'.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 02 Feb 2022 12:07:03 +0100
+
+setuptools-scm (6.3.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Mark autopkgtest as allow-stderr, setuptools now prints a deprecation
+    warning when setup.py is invoked directly. (Closes: #1002523)
+  * Run autopkgtest for all supported Python 3 versions.
+  * Run autopkgtest out of the source tree, to be sure we're testing the
+    installed module.
+    - Disable 2 tests that can't be run out of the source tree.
+  * Enable more unit tests in autopkgtest, issue resolved upstream.
+  * Build with pybuild's pyproject plugin.
+  * Extend upstream metadata.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 12 Jan 2022 18:36:00 -0400
+
+setuptools-scm (6.3.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add new b-dep on python3-tomli.
+  * Add new autopkgtest dep on python3-virtualenv.
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 22 Nov 2021 09:39:22 +0100
+
+setuptools-scm (6.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump std-vers to 4.6.0.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 19 Aug 2021 10:23:13 +0200
+
+setuptools-scm (5.0.1-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Stefano Rivera ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+
+  [ Julien Puydt ]
+  * Bump std-vers to 4.5.1.
+  * New upstream release.
+  * Drop fix_typo.patch (upstreamed).
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 14 Dec 2020 08:46:19 +0100
+
+setuptools-scm (4.1.2-4) unstable; urgency=medium
+
+  * Drop python2 support; Closes: #928156
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 17 Jul 2020 17:33:30 -0400
+
+setuptools-scm (4.1.2-3) unstable; urgency=medium
+
+  * Improve the patch to accept debian version tags.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 11 Jul 2020 15:59:12 +0200
+
+setuptools-scm (4.1.2-2) unstable; urgency=medium
+
+  * Add a patch to fix a typo.
+  * Add a patch to accept debian version tags. (Closes: #933739)
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 11 Jul 2020 15:09:40 +0200
+
+setuptools-scm (4.1.2-1) unstable; urgency=medium
+
+  * Update team mailing list address.
+  * New upstream release (Closes: #964800).
+  * Drop the only patch (upstreamed).
+  * Make upstream testsuite run.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 11 Jul 2020 00:09:09 +0200
+
+setuptools-scm (3.4.3+really3.3.3-5) unstable; urgency=medium
+
+  * Team upload.
+  * Drop PyPy support.
+  * Bump debhelper compat level to 13.
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 05 Jun 2020 12:13:07 +0200
+
+setuptools-scm (3.4.3+really3.3.3-4) unstable; urgency=medium
+
+  * debian/tests
+    - remove testsuite2, restore testsuite, fixes a failure with autopkgtest;
+      Closes: #958827
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 25 Apr 2020 13:24:15 -0400
+
+setuptools-scm (3.4.3+really3.3.3-3) unstable; urgency=medium
+
+  * Dont run unittests for python2 binary, to reduce pytest rdeps
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 13 Apr 2020 20:09:56 -0400
+
+setuptools-scm (3.4.3+really3.3.3-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add PyPy version back, as it's still needed too.
+  * Use autopkgtest-pkg-python instead of own one for import tests.
+  * Rules-Requires-Root: no.
+  * Run PyPy tests.
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 07 Feb 2020 09:18:59 +0100
+
+setuptools-scm (3.4.3+really3.3.3-1) unstable; urgency=medium
+
+  * Re-upload an old version since the Python 2 version is
+  still needed.
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 31 Jan 2020 23:24:12 +0100
+
+setuptools-scm (3.4.3-1) unstable; urgency=medium
+
+  * Document the patch was forwarded and is from me.
+  * New upstream release.
+  * Refresh patch.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 23 Jan 2020 07:08:30 +0100
+
+setuptools-scm (3.4.2-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Julien Puydt ]
+  * New upstream release.
+  * Bump std-ver to 4.5.0.
+  * Drop the Python 2 package (Closes: #938470).
+  * Update dates in d/copyright.
+  * Drop the pypy package too.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 22 Jan 2020 16:29:44 +0100
+
+setuptools-scm (3.3.3-2) unstable; urgency=medium
+
+  * Team upload.
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.0.
+  * Bump debhelper compat level to 12.
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 09 Aug 2019 21:39:50 +0200
+
+setuptools-scm (3.3.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 16 May 2019 08:15:44 +0200
+
+setuptools-scm (3.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump std-ver to 4.3.0.
+  * Drop d/p/fix_unintended_missing_parameters: in upstream.
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 18 Jan 2019 21:25:50 +0100
+
+setuptools-scm (3.1.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add d/p/fix_unintended_missing_parameters: Fix pytest 3.9.3 compatibility
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 23 Nov 2018 08:40:55 +0100
+
+setuptools-scm (3.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh packaging: wrap-and-sort and bump std-ver to 4.2.1.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 18 Oct 2018 22:00:57 +0200
+
+setuptools-scm (3.0.6-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 02 Aug 2018 08:19:57 +0200
+
+setuptools-scm (3.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 29 Jul 2018 08:57:06 +0200
+
+setuptools-scm (3.0.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 24 Jul 2018 23:12:54 +0200
+
+setuptools-scm (3.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump std-ver to 4.1.5.
+  * Drop now useless patch.
+  * Disable build-time tests as it needs hacks.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 24 Jul 2018 13:47:44 +0200
+
+setuptools-scm (2.1.0-2) unstable; urgency=medium
+
+  * Run testsuite in autopkgtest.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 23 May 2018 12:09:45 +0200
+
+setuptools-scm (2.1.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+
+  [ Julien Puydt ]
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 18 May 2018 18:46:23 +0200
+
+setuptools-scm (2.0.0-2) unstable; urgency=medium
+
+  * Fix repository issue.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 03 May 2018 07:22:05 +0200
+
+setuptools-scm (2.0.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/changelog: Remove trailing whitespaces
+
+  [ Julien Puydt]
+  * Refresh packaging:
+    - Rewrite d/watch to point to upstream's github repository.
+    - Update dates in d/copyright.
+    - Use my debian.org email address.
+  * New upstream release.
+  * Add patch to disable a test needing network access.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 02 May 2018 21:58:54 +0200
+
+setuptools-scm (1.17.0-2) unstable; urgency=medium
+
+  * Refresh packaging:
+    - Bump std-vers to 4.1.4.
+    - Bump dh compat to 11.
+    - Add basic autopkgtest (import).
+  * Add missing depends (Closes: #896418, #896365).
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Sun, 22 Apr 2018 23:01:46 +0200
+
+setuptools-scm (1.17.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Fix Format URL to correct one
+
+  [ Julien Puydt ]
+  * New upstream release (Closes: #894198).
+  * Bump standards-version to 4.1.3.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Sat, 07 Apr 2018 00:04:45 +0200
+
+setuptools-scm (1.15.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump standards-version to 4.0.0.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Thu, 29 Jun 2017 07:05:20 +0200
+
+setuptools-scm (1.15.0-2) unstable; urgency=medium
+
+  * Add pypy-setuptools-scm package. Closes: #864687.
+
+ -- Brian May <bam@debian.org>  Sat, 24 Jun 2017 19:37:30 +1000
+
+setuptools-scm (1.15.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Fri, 21 Oct 2016 06:57:11 +0200
+
+setuptools-scm (1.14.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Thu, 13 Oct 2016 08:28:24 +0200
+
+setuptools-scm (1.13.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Tue, 11 Oct 2016 15:11:31 +0200
+
+setuptools-scm (1.13.0-1) unstable; urgency=medium
+
+  [ Julien Puydt ]
+  * New upstream version.
+  * Pushed dh compat up to 10.
+
+  [ Antoine BeauprÃ© ]
+  * Document how to use this software in other Debian packages (Closes:
+    #839687)
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Thu, 06 Oct 2016 06:58:20 +0200
+
+setuptools-scm (1.11.1-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Mon, 13 Jun 2016 12:57:57 +0200
+
+setuptools-scm (1.11.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+
+  [ Julien Puydt ]
+  * New upstream version.
+  * Pushed standards-version up to 3.9.8.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Wed, 11 May 2016 15:28:35 +0200
+
+setuptools-scm (1.10.1-2) unstable; urgency=medium
+
+  * Team upload.
+  [ Dmitry Shachnev ]
+  * Correct dependency for python3-setuptools-scm (use ${python3:Depends}
+    instead of ${python:Depends}).
+
+  [ Gianfranco Costamagna ]
+  * Make sure we pick a suitable python*-setuptools version
+    (>=18.8-1~)
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 16 Dec 2015 09:36:12 +0300
+
+setuptools-scm (1.10.1-1) unstable; urgency=medium
+
+  * Team upload, with maintainer's permission.
+  * New upstream release.
+  * Set DPMT back as maintainer, as we are officially switched to Git
+    (as agreed with Julien).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 15 Dec 2015 21:54:46 +0300
+
+setuptools-scm (1.8.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Put myself as sole maintainer.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Fri, 02 Oct 2015 11:02:33 +0200
+
+setuptools-scm (1.7.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #797915)
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Thu, 03 Sep 2015 10:08:15 +0200

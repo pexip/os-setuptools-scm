@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+# setuptools_support and test_pip_download: network access is disabled
+# test_main and test_own_setup_fails_on_old_python: fails outside source tree
+TESTS_TO_EXCLUDE="not (setuptools_support or test_pip_download or test_main"
+TESTS_TO_EXCLUDE="$TESTS_TO_EXCLUDE or test_own_setup_fails_on_old_python)"
+
+cp -a testing $AUTOPKGTEST_TMP
+cd $AUTOPKGTEST_TMP
+
+for py in $(py3versions -s); do
+	$py -m pytest -k "$TESTS_TO_EXCLUDE"
+done

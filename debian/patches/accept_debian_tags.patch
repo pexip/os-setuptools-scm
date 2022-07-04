@@ -1,0 +1,22 @@
+From: Debian Python Team <team+python@tracker.debian.org>
+Date: Wed, 12 Jan 2022 18:08:28 -0400
+Subject: accept debian version tags
+
+Forwarded: Debian-specific
+---
+ src/setuptools_scm/git.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+--- setuptools-scm.orig/src/setuptools_scm/git.py
++++ setuptools-scm/src/setuptools_scm/git.py
+@@ -243,6 +243,10 @@
+         dirty = False
+ 
+     tag, number, node = describe_output.rsplit("-", 2)
++    if tag.startswith('debian/'):
++        tag = tag[7:]
++    if tag.startswith('upstream/'):
++        tag = tag[9:]
+     return tag, int(number), node, dirty
+ 
+ 

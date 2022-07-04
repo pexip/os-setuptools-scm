@@ -1,0 +1,10 @@
+Tests: testsuite
+Depends: git,
+         mercurial,
+         python3-all,
+         python3-pytest,
+         python3-setuptools,
+         python3-setuptools-scm,
+         python3-toml,
+         python3-virtualenv
+Restrictions: allow-stderr

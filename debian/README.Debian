@@ -1,0 +1,34 @@
+setuptool-scm for Debian
+------------------------
+
+You may have problems packaging upstream software that use this
+package for their versioning, since setuptools-scm will not have
+access to the git repository when building. You may get errors like:
+
+    LookupError: setuptools-scm was unable to detect version for '/tmp/build-area/gentoo-1.0'.
+
+Debian's Python build toolchain supports setuptools-scm with dh_python
+(>= 2.20160609~). Make sure you enable `pybuild` in your
+`debian/rules` file, for example:
+
+    %:
+        dh $@  --with=python2,sphinxdoc --buildsystem=pybuild
+
+On older versions of dh_python, you can manually override the version
+number using the `SETUPTOOLS_SCM_PRETEND_VERSION` variable. For
+example, this will pull the version from the upstream PKG-INFO file:
+
+    export SETUPTOOLS_SCM_PRETEND_VERSION=$(shell cat PKG-INFO | sed -n 's/^Version: //p')
+
+This will pull the version from the `debian/changelog` file:
+
+    export SETUPTOOLS_SCM_PRETEND_VERSION=$(shell dpkg-parsechangelog -S version)
+
+setuptools-scm can also be used to generate a file that will contain
+version numbers with the `write_to` parameter, as such:
+
+    use_scm_version={
+        'write_to': '_version.py',
+    },
+
+ -- Antoine Beaupré <anarcat@debian.org>, Wed,  5 Oct 2016 13:34:36 -0400

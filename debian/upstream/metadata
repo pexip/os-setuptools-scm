@@ -1,0 +1,10 @@
+---
+Changelog: https://github.com/pypa/setuptools_scm/blob/main/CHANGELOG.rst
+Bug-Database: https://github.com/pypa/setuptools_scm/issues
+Bug-Submit: https://github.com/pypa/setuptools_scm/issues/new
+Registry:
+  - Name: PyPI
+    Entry: setuptools-scm
+Repository: https://github.com/pypa/setuptools_scm.git
+Repository-Browse: https://github.com/pypa/setuptools_scm
+Security-Contact: https://tidelift.com/security
