@@ -1,3 +1,9 @@
+setuptools-scm (7.0.4-1pexip1) pexip-bullseye; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Wed, 20 Jul 2022 09:26:31 +0100
+
 setuptools-scm (7.0.4-1) unstable; urgency=medium
 
   * New upstream release.
