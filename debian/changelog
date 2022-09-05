@@ -1,3 +1,9 @@
+setuptools-scm (7.0.4-1pexip2) pexip-bullseye; urgency=medium
+
+  * Bullseye rebuild for ARM64 inclusion
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Mon, 05 Sep 2022 10:35:57 +0100
+
 setuptools-scm (7.0.4-1pexip1) pexip-bullseye; urgency=medium
 
   * Prepare Pexip packaging
