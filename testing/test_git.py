@@ -523,6 +523,7 @@ def test_git_getdate_signed_commit(signed_commit_wd: WorkDir) -> None:
         ("0.0", {"node": "0" * 20}),
         ("1.2.2", {"describe-name": "release-1.2.2-0-g00000"}),
         ("1.2.2.dev0", {"ref-names": "tag: release-1.2.2.dev"}),
+        ("1.2.2", {"describe-name": "v1.2.2"}),
     ],
 )
 @pytest.mark.filterwarnings("ignore:git archive did not support describe output")
@@ -542,4 +543,12 @@ def test_git_archival_to_version(expected: str, from_data: dict[str, str]) -> No
 def test_git_archival_node_missing_no_version() -> None:
     config = Configuration()
     version = archival_to_version({}, config=config)
+    assert version is None
+
+
+def test_git_archival_from_unfiltered() -> None:
+    config = Configuration()
+
+    with pytest.warns(UserWarning, match="unexported git archival found"):
+        version = archival_to_version({"node": "$Format:%H$"}, config=config)
     assert version is None

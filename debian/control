@@ -3,7 +3,7 @@ Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Julien Puydt <jpuydt@debian.org>
 Section: python
 Priority: optional
-Standards-Version: 4.6.1
+Standards-Version: 4.6.2
 Homepage: https://github.com/pypa/setuptools_scm
 Build-Depends: debhelper-compat (= 13),
                dh-python,
@@ -13,7 +13,7 @@ Build-Depends: debhelper-compat (= 13),
                python3-all,
                python3-py,
                python3-pytest,
-               python3-setuptools (>=12.2),
+               python3-setuptools,
                python3-tomli,
                subversion
 Vcs-Git: https://salsa.debian.org/python-team/packages/setuptools-scm.git
