@@ -232,9 +232,13 @@ def _git_parse_inner(
     )
 
 
-def _git_parse_describe(describe_output: str) -> tuple[str, int, str, bool]:
+def _git_parse_describe(
+    describe_output: str,
+) -> tuple[str, int | None, str | None, bool]:
     # 'describe_output' looks e.g. like 'v1.5.0-0-g4060507' or
     # 'v1.15.1rc1-37-g9bd1298-dirty'.
+    # It may also just be a bare tag name if this is a tagged commit and we are
+    # parsing a .git_archival.txt file.
 
     if describe_output.endswith("-dirty"):
         dirty = True
@@ -242,8 +246,15 @@ def _git_parse_describe(describe_output: str) -> tuple[str, int, str, bool]:
     else:
         dirty = False
 
-    tag, number, node = describe_output.rsplit("-", 2)
-    return tag, int(number), node, dirty
+    split = describe_output.rsplit("-", 2)
+    if len(split) < 3:  # probably a tagged commit
+        tag = describe_output
+        number = None
+        node = None
+    else:
+        tag, number_, node = split
+        number = int(number_)
+    return tag, number, node, dirty
 
 
 def search_parent(dirname: _t.PathT) -> GitWorkdir | None:
@@ -295,10 +306,13 @@ def archival_to_version(
         return meta(versions[0], config=config)
     else:
         node = data.get("node")
-        if node is not None:
-            return meta("0.0", node=node, config=config)
-        else:
+        if node is None:
             return None
+        elif "$FORMAT" in node.upper():
+            warnings.warn("unexported git archival found")
+            return None
+        else:
+            return meta("0.0", node=node, config=config)
 
 
 def parse_archival(
