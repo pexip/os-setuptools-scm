@@ -1,3 +1,41 @@
+setuptools-scm (7.1.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Revert the explicit Depends, again.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 03 Feb 2023 19:57:15 -0400
+
+setuptools-scm (7.1.0-2) unstable; urgency=medium
+
+  * Add an explicit Depends on python3-tomli, required while Python 3.10 is a
+    supported version. (Closes: #1027947)
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 14 Jan 2023 12:13:09 -0400
+
+setuptools-scm (7.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump standards-version.
+  * Refresh the patch to accept debian tags.
+  * Drop the patch to fix upstream #750.
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 26 Dec 2022 16:06:18 +0100
+
+setuptools-scm (7.0.5-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on python3-setuptools.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Fri, 14 Oct 2022 11:53:59 +0100
+
+setuptools-scm (7.0.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add patch to fix upstream #750.
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 25 Jul 2022 11:46:01 +0200
+
 setuptools-scm (7.0.4-1pexip2) pexip-bullseye; urgency=medium
 
   * Bullseye rebuild for ARM64 inclusion
