@@ -1,3 +1,9 @@
+setuptools-scm (7.1.0-3pexip1) pexip; urgency=medium
+
+  * New upstream release
+
+ -- Huw Jones <huw@pexip.com>  Fri, 17 Mar 2023 15:47:35 +0000
+
 setuptools-scm (7.1.0-3) unstable; urgency=medium
 
   * Team upload.
