@@ -1,3 +1,9 @@
+setuptools-scm (7.1.0-3pexip2) pexip-bookworm; urgency=medium
+
+  * Initial bookworm build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 16 Nov 2023 10:33:27 +0000
+
 setuptools-scm (7.1.0-3pexip1) pexip; urgency=medium
 
   * New upstream release
